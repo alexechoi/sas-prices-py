@@ -5,6 +5,7 @@ from sas.sas_cheapest import get_cheapest_round_trips
 from sas.sas_batch import get_prices_in_batches
 import logging
 from datetime import datetime, timedelta
+import requests
 
 # Setup logging
 logging.basicConfig(level=logging.INFO)
