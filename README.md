@@ -1,8 +1,8 @@
-# SAS-PY: Python Package for Fetching SAS Flight Prices
+# SAS-PRICES-PY: Python Package for Fetching SAS Flight Prices
 
 ## Overview
 
-**SAS-PY** is a Python package designed to interact with SAS (Scandinavian Airlines) flight pricing APIs. It provides functionality to fetch and process flight data, including round-trip prices for specified origins, destinations, regions, and durations. The package enables efficient data retrieval with support for asynchronous requests and custom filtering.
+**SAS-PRICES-PY** is a Python package designed to interact with SAS (Scandinavian Airlines) flight pricing APIs. It provides functionality to fetch and process flight data, including round-trip prices for specified origins, destinations, regions, and durations. The package enables efficient data retrieval with support for asynchronous requests and custom filtering.
 
 ---
 
@@ -30,7 +30,7 @@
 
 ## Installation
 
-To install SAS-PY, clone the repository and ensure the required dependencies are installed:
+To install SAS-PRICES-PY, clone the repository and ensure the required dependencies are installed:
 
 ```bash
 git clone https://github.com/alexechoi/sas-py.git
