@@ -46,15 +46,10 @@ def get_monthly_round_trip_prices(
 
     response = requests.get(BASE_URL, headers=HEADERS, params=params)
 
-    print("printing monthly")
-    print(response.text)
-
     # Handle encoding gracefully
     decoded_content = None
     try:
         content_encoding = response.headers.get("Content-Encoding", "").lower()
-        print("content encoding")
-        print(content_encoding)
         if content_encoding == "br":
             decoded_content = response.content.decode("utf-8")
         elif content_encoding in ["gzip", "deflate"]:
