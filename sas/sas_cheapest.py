@@ -61,7 +61,6 @@ def get_cheapest_round_trips(
         try:
             decoded_content = brotli.decompress(response.content).decode("utf-8")
         except Exception as e:
-            logger.error(f"Brotli decompression failed: {e}")
             decoded_content = response.text  # Fallback to raw content
     else:
         decoded_content = response.text

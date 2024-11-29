@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="sas-prices-py",
-    version="0.1.1",
+    version="0.1.2",
     author="Alex Choi",
     author_email="alexchoidev@gmail.com",
     description="Python package for fetching SAS flight prices",

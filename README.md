@@ -1,41 +1,45 @@
+Here’s an updated version of your README tailored for a pip-distributed package:
+
+---
+
 # SAS-PRICES-PY: Python Package for Fetching SAS Flight Prices
 
 ## Overview
 
-**SAS-PRICES-PY** is a Python package designed to interact with SAS (Scandinavian Airlines) flight pricing APIs. It provides functionality to fetch and process flight data, including round-trip prices for specified origins, destinations, regions, and durations. The package enables efficient data retrieval with support for asynchronous requests and custom filtering.
+**SAS-PRICES-PY** is a Python package for interacting with SAS (Scandinavian Airlines) flight pricing APIs. It provides functionality to fetch and process flight data, including round-trip prices for specified origins, destinations, regions, and durations. Designed for efficiency, the package supports asynchronous requests and advanced filtering.
+
+⚠️ **Disclaimer:** This package is in no way affiliated with Scandinavian Airlines.
 
 ---
 
 ## Features
 
 - **Cheapest Round Trips**:
-  - Fetch the cheapest round-trip prices for specific destinations or entire regions.
-  - Support for filtering by origin, destination, and trip start date.
+  - Fetch the cheapest round-trip prices for specific destinations or regions.
+  - Filter results by origin, destination, and trip start date.
 
 - **Monthly Prices**:
   - Retrieve monthly outbound and inbound prices for specific origin-destination pairs.
-  - Calculate combined round-trip prices for given months.
+  - Calculate combined round-trip prices for selected months.
 
 - **Trips by Length**:
-  - Identify the cheapest trips of a specified duration (e.g., 2-day trips).
-  - Option to search across all destinations or specific regions.
+  - Find the cheapest trips of a specified duration (e.g., 2-day trips).
+  - Search across all destinations or specific regions.
 
 - **Batch Request Optimization**:
-  - Simultaneous fetching of prices for multiple destinations using asynchronous requests for improved performance.
+  - Use asynchronous requests for faster data retrieval when fetching multiple destinations.
 
 - **Error Handling**:
-  - Gracefully handles API failures, empty responses, and invalid data.
+  - Handle API failures, empty responses, and invalid data gracefully.
 
 ---
 
 ## Installation
 
-To install SAS-PRICES-PY, clone the repository and ensure the required dependencies are installed:
+Install **SAS-PRICES-PY** via pip:
 
 ```bash
-git clone https://github.com/alexechoi/sas-py.git
-cd sas-py
-pip install -r requirements.txt
+pip install sas-prices-py
 ```
 
 ---
@@ -44,7 +48,7 @@ pip install -r requirements.txt
 
 ### 1. **Initialize the SAS Client**
 ```python
-from sas.api import SAS
+from sas_prices_py import SAS
 
 sas = SAS(market="gb-en")  # Default market: "gb-en"
 ```
@@ -79,21 +83,21 @@ print(trips)
 
 ## Code Structure
 
-- **`sas/api.py`**:
-  - Main interface for fetching data from the SAS API.
-  - Provides methods for cheapest trips, monthly prices, and filtering by length.
+- **`sas_prices_py/api.py`**:
+  - Main interface for interacting with SAS APIs.
+  - Includes methods for fetching cheapest trips, monthly prices, and filtering by trip length.
 
-- **`sas/sas_monthly.py`**:
-  - Contains logic to fetch and process monthly round-trip prices.
+- **`sas_prices_py/sas_monthly.py`**:
+  - Handles monthly round-trip price logic.
 
-- **`sas/sas_cheapest.py`**:
-  - Implements fetching the cheapest round trips for multiple destinations.
+- **`sas_prices_py/sas_cheapest.py`**:
+  - Implements fetching the cheapest round trips.
 
-- **`sas/data.py`**:
-  - Defines available regions and their respective destinations.
+- **`sas_prices_py/data.py`**:
+  - Defines regions and their destinations.
 
 - **`tests/test_api.py`**:
-  - Unit tests to validate package functionality.
+  - Unit tests for package functionality.
 
 ---
 
@@ -119,16 +123,11 @@ OK
 
 ## Dependencies
 
+The following dependencies are required and installed automatically with pip:
+
 - `requests`
 - `aiohttp`
 - `brotli`
-- `unittest`
-
-Install them using:
-
-```bash
-pip install -r requirements.txt
-```
 
 ---
 
@@ -139,14 +138,14 @@ pip install -r requirements.txt
    - Optimized with asynchronous requests to reduce API call latency.
 
 2. **Dynamic Filtering**:
-   - Supports filtering by region, origin, destination, and trip duration.
+   - Filter by region, origin, destination, and trip duration.
 
 3. **Customizable Markets**:
    - Set the market during initialization (`gb-en`, `us-en`, etc.).
 
 ### Known Limitations
-- The API may return empty responses if no flights are available.
-- Network-related errors can slow down or fail batch requests; retry mechanisms may be necessary.
+- Empty responses may occur if no flights are available.
+- Network-related errors can slow or fail batch requests; retry mechanisms may improve performance.
 
 ---
 
@@ -154,15 +153,15 @@ pip install -r requirements.txt
 
 This project is licensed under the MIT License. See the LICENSE file for details.
 
-NOTE THAT THIS PROJECT IS IN NO WAY AFFILIATED WITH SCANDINAVIAN AIRLINES
+**Disclaimer**: This project is in no way affiliated with Scandinavian Airlines.
 
 ---
 
 ## Contributions
 
-Contributions are welcome! Please submit issues or pull requests via the [GitHub repository](https://github.com/alexechoi/sas-py).
+Contributions are welcome! Please submit issues or pull requests via the [GitHub repository](https://github.com/alexechoi/sas-prices-py).
 
---- 
+---
 
 ## Author
 
